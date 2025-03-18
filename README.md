@@ -69,63 +69,35 @@ MovieRatingsAnalysis/
 
 You can run the analysis tasks either locally or using Docker.
 
-#### **a. Running Locally**
-
-1. **Navigate to the Project Directory**:
-   ```bash
-   cd MovieRatingsAnalysis/
-   ```
-
-2. **Execute Each Task Using `spark-submit`**:
-   ```bash
-   spark-submit src/task1_binge_watching_patterns.py
-   spark-submit src/task2_churn_risk_users.py
-   spark-submit src/task3_movie_watching_trends.py
-   ```
-
-3. **Verify the Outputs**:
-   Check the `outputs/` directory for the resulting files:
-   ```bash
-   ls outputs/
-   ```
-   You should see:
-   - `binge_watching_patterns.txt`
-   - `churn_risk_users.csv`
-   - `movie_watching_trends.csv`
-
-#### **b. Running with Docker (Optional)**
+#### **a. Running with Docker (Optional)**
 
 1. **Start the Spark Cluster**:
    ```bash
    docker-compose up -d
    ```
 
-2. **Access the Spark Master Container**:
-   ```bash
-   docker exec -it spark-master bash
-   ```
 
-3. **Navigate to the Spark Directory**:
+2. **Navigate to the Spark Directory**:
    ```bash
    cd /opt/bitnami/spark/
    ```
 
-4. **Run Your PySpark Scripts Using `spark-submit`**:
+3. **Run Your PySpark Scripts Using `spark-submit`**:
    ```bash
    spark-submit src/task1_binge_watching_patterns.py
    spark-submit src/task2_churn_risk_users.py
    spark-submit src/task3_movie_watching_trends.py
    ```
 
-5. **Exit the Container**:
+4. **Exit the Container**:
    ```bash
    exit
    ```
 
-6. **Verify the Outputs**:
+5. **Verify the Outputs**:
    On your host machine, check the `outputs/` directory for the resulting files.
 
-7. **Stop the Spark Cluster**:
+. **Stop the Spark Cluster**:
    ```bash
    docker-compose down
    ```
